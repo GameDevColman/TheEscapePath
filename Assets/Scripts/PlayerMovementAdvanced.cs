@@ -40,6 +40,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
     
 
     public Transform orientation;
+    private Animator animator;
 
     float horizontalInput;
     float verticalInput;
@@ -59,6 +60,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
 
@@ -149,8 +151,18 @@ public class PlayerMovementAdvanced : MonoBehaviour
 
     private void MovePlayer()
     {
+
         // calculate movement direction
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+
+        if (moveDirection != Vector3.zero)
+        {
+            animator.SetBool("IsMoving", true);
+        }
+        else
+        {
+            animator.SetBool("IsMoving", false);
+        }
 
         // on slope
         if (OnSlope() && !exitingSlope)
@@ -198,6 +210,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
 
     private void Jump()
     {
+        animator.SetBool("IsJumping", true);
         exitingSlope = true;
 
         // reset y velocity
@@ -205,11 +218,12 @@ public class PlayerMovementAdvanced : MonoBehaviour
 
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
+
     private void ResetJump()
     {
         readyToJump = true;
-
         exitingSlope = false;
+        animator.SetBool("IsJumping", false);
     }
 
     private bool OnSlope()
