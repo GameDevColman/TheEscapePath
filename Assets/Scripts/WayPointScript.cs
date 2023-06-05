@@ -16,30 +16,26 @@ public class WayPointScript : MonoBehaviour
 
     private void Start()
     {
-        // animator = GetComponent<Animator>();
-        // animator.SetBool("IsSitting", false);
-        // animator.SetBool("IsWalking", true);
+        animator = GetComponent<Animator>();
+        animator.SetBool("IsSitting", false);
+        animator.SetBool("IsWalking", true);
     }
 
     void Update()
     {       
         target = waypoints[currentWayPoint].position;
         moveDirection = target - transform.position;
-
-        // if (!animator.GetBool("IsSitting") && !animator.GetBool("IsWalking")) 
-        // {
-        //     animator.SetBool("IsWalking", true);
-        // }
+        GetComponent<Rigidbody>().velocity = moveDirection.normalized * speed;
+        
         if (moveDirection.magnitude < 1 && flag)
         {
             currentWayPoint = ++currentWayPoint % waypoints.Length;
             StartCoroutine(Stay());
-              
         }
-        GetComponent<Rigidbody>().velocity = moveDirection.normalized * speed;
     }
 
-    private void OnTriggerEnter(Collider collider) {
+    private void OnTriggerEnter(Collider collider) 
+    {
         if (collider.gameObject.tag == "Player")
         {
             Destroy(gameObject);
@@ -51,11 +47,12 @@ public class WayPointScript : MonoBehaviour
     IEnumerator Stay()
     {
         flag = false;
-        // animator.SetBool("IsWalking", false);
-        // animator.SetBool("IsSitting", true);
-        yield return new WaitForSeconds(5);
-        // animator.SetBool("IsSitting", false);
-        // animator.SetBool("IsWalking", true);
+        animator.SetBool("IsWalking", false);
+        animator.SetBool("IsSitting", true);
+        yield return new WaitForSeconds(UnityEngine.Random.Range(3,7));
+        animator.SetBool("IsSitting", false);
+        animator.SetBool("IsWalking", true);
+        GetComponent<Transform>().LookAt(waypoints[currentWayPoint]);
         flag = true;
     }
 }
