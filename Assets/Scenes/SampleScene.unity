@@ -1453,6 +1453,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6866126246986096140, guid: 37d9243d52e8b488ea33d8a28d7bb5a9, type: 3}
+      propertyPath: playerInventory
+      value: 
+      objectReference: {fileID: 1456129599}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37d9243d52e8b488ea33d8a28d7bb5a9, type: 3}
 --- !u!1001 &998750293
@@ -1510,6 +1514,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6866126246986096140, guid: 37d9243d52e8b488ea33d8a28d7bb5a9, type: 3}
+      propertyPath: playerInventory
+      value: 
+      objectReference: {fileID: 1456129599}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37d9243d52e8b488ea33d8a28d7bb5a9, type: 3}
 --- !u!1 &1004804770
@@ -2302,6 +2310,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnDialogShow:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1004804774}
+        m_TargetAssemblyTypeName: DialogUI, Assembly-CSharp
+        m_MethodName: UpdateDialogText
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!64 &1456129600
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2421,6 +2444,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6866126246986096140, guid: 37d9243d52e8b488ea33d8a28d7bb5a9, type: 3}
+      propertyPath: playerInventory
+      value: 
+      objectReference: {fileID: 1456129599}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37d9243d52e8b488ea33d8a28d7bb5a9, type: 3}
 --- !u!1 &1534778399
@@ -2641,6 +2668,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6866126246986096140, guid: 37d9243d52e8b488ea33d8a28d7bb5a9, type: 3}
+      propertyPath: playerInventory
+      value: 
+      objectReference: {fileID: 1456129599}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37d9243d52e8b488ea33d8a28d7bb5a9, type: 3}
 --- !u!1 &1737844501
@@ -2712,7 +2743,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1737844501}
-  m_LocalRotation: {x: -0.023221446, y: -0.94386405, z: -0.0679774, w: 0.32242903}
+  m_LocalRotation: {x: -0.023221435, y: -0.9438641, z: -0.06797737, w: 0.32242906}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2942,7 +2973,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2027935086}
-  m_LocalRotation: {x: 0.01330332, y: -0.94720274, z: 0.03963837, w: 0.31789756}
+  m_LocalRotation: {x: 0.013303318, y: -0.94720274, z: 0.03963837, w: 0.31789756}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4860,6 +4891,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6866126246986096140, guid: 37d9243d52e8b488ea33d8a28d7bb5a9, type: 3}
+      propertyPath: playerInventory
+      value: 
+      objectReference: {fileID: 1456129599}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37d9243d52e8b488ea33d8a28d7bb5a9, type: 3}
 --- !u!1 &7036213050100454269

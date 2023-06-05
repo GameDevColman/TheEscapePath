@@ -12,6 +12,7 @@ public class WayPointScript : MonoBehaviour
     Vector3 target, moveDirection;
     private bool flag = true; 
     private Animator animator;
+    public PlayerInventory playerInventory;
 
     private void Start()
     {
@@ -38,18 +39,12 @@ public class WayPointScript : MonoBehaviour
         GetComponent<Rigidbody>().velocity = moveDirection.normalized * speed;
     }
 
-    // private void OnCollisionEnter(Collision collision) 
-    // {
-    //     if (collision.gameObject.CompareTag("Player"))
-    //     {
-    //         Destroy(gameObject);
-    //     }
-    // }
-
     private void OnTriggerEnter(Collider collider) {
         if (collider.gameObject.tag == "Player")
         {
             Destroy(gameObject);
+            Destroy(collider.gameObject.transform.parent.gameObject);
+            playerInventory.DialogShow("Youv'e been defeated");
         }
     }
 
