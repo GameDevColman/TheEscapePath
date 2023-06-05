@@ -36,7 +36,21 @@ public class WayPointScript : MonoBehaviour
               
         }
         GetComponent<Rigidbody>().velocity = moveDirection.normalized * speed;
+    }
 
+    // private void OnCollisionEnter(Collision collision) 
+    // {
+    //     if (collision.gameObject.CompareTag("Player"))
+    //     {
+    //         Destroy(gameObject);
+    //     }
+    // }
+
+    private void OnTriggerEnter(Collider collider) {
+        if (collider.gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
     }
 
     IEnumerator Stay()
