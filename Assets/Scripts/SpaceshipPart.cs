@@ -11,6 +11,8 @@ public class SpaceshipPart : MonoBehaviour
 
         if (collider.gameObject.tag == "Player" && playerInventory != null)
         {
+            Debug.Log("PartCollected");
+            playerInventory.PartCollected();
             AudioSource.PlayClipAtPoint(boomSound, transform.position);
             Destroy(gameObject);
         }

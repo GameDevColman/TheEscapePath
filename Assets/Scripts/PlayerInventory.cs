@@ -10,7 +10,7 @@ public class PlayerInventory : MonoBehaviour
 
     public UnityEvent<PlayerInventory> OnPartCollected;
 
-    public void partCollected()
+    public void PartCollected()
     {
         NumberOfParts++;
         OnPartCollected.Invoke(this);
