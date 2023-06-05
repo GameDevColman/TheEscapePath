@@ -39,6 +39,6 @@ public class PlayerInventory : MonoBehaviour
 
     public void GoHome()
     {
-      
+      DialogShow("Travel safe :)");
     }
 }

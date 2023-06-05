@@ -6,14 +6,16 @@ public class SpaceShip : MonoBehaviour
 {
     public AudioClip boomSound;
 
-        private void OnTriggerEnter(Collider collider) {
-            PlayerInventory playerInventory = collider.GetComponent<PlayerInventory>();
+    private void OnTriggerEnter(Collider collider) 
+    {
+        PlayerInventory playerInventory = collider.GetComponent<PlayerInventory>();
 
-            if (collider.gameObject.tag == "Player" && playerInventory != null)
-            {
-                playerInventory.GoHome();
-                AudioSource.PlayClipAtPoint(boomSound, transform.position);
-                Destroy(gameObject);
-            }
+        if (collider.gameObject.tag == "Player" && playerInventory != null)
+        {
+            playerInventory.GoHome();
+            AudioSource.PlayClipAtPoint(boomSound, transform.position);
+            Destroy(collider.gameObject.transform.parent.gameObject);
+            Destroy(gameObject);
         }
+    }
 }
