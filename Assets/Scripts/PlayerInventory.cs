@@ -15,5 +15,4 @@ public class PlayerInventory : MonoBehaviour
         NumberOfParts++;
         OnPartCollected.Invoke(this);
     }
-
 }

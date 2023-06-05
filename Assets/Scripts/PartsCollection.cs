@@ -10,7 +10,6 @@ public class PartsCollection : MonoBehaviour
     void Start()
     {
         partsCollected = GetComponent<TextMeshProUGUI>();
-        Debug.Log(partsCollected);
     }
 
     public void UpdatePartsText(PlayerInventory playerInventory)
