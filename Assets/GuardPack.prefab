@@ -269,6 +269,19 @@ MonoBehaviour:
   - {fileID: 6866126245188058959}
   - {fileID: 6866126244968180568}
   speed: 3
+  playerInventory: {fileID: 0}
+--- !u!114 &3586221107617060873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6019070387481361864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74026678ca8534a43ad28130cfb79bc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6396193442272536434 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 33697941cd4594a04a84647aa50abf92, type: 3}
