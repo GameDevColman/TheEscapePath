@@ -9,7 +9,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: IsMoving
+    m_ConditionEvent: isSprinting
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1932105130081826377}
@@ -62,10 +62,10 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: IsJumping
+    m_ConditionEvent: isJumping
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: IsMoving
+    m_ConditionEvent: isSprinting
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -7139876688286900295}
@@ -118,13 +118,13 @@ AnimatorController:
   m_Name: Alien
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: IsMoving
+  - m_Name: isSprinting
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: IsJumping
+  - m_Name: isJumping
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -180,10 +180,10 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: IsJumping
+    m_ConditionEvent: isJumping
     m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: IsMoving
+    m_ConditionEvent: isSprinting
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1932105130081826377}
@@ -208,7 +208,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: IsJumping
+    m_ConditionEvent: isJumping
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8615276669702775247}
@@ -233,7 +233,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: IsJumping
+    m_ConditionEvent: isJumping
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8615276669702775247}
@@ -258,7 +258,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: IsMoving
+    m_ConditionEvent: isSprinting
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -7139876688286900295}

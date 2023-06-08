@@ -14,7 +14,7 @@ public class SpaceShip : MonoBehaviour
         {
             playerInventory.GoHome();
             AudioSource.PlayClipAtPoint(boomSound, transform.position);
-            Destroy(collider.gameObject.transform.parent.gameObject);
+            Destroy(collider.gameObject);
             Destroy(gameObject);
         }
     }

@@ -14,12 +14,24 @@ public class PlayerInventory : MonoBehaviour
     public UnityEvent<PlayerInventory> OnPartCollected;
     public UnityEvent<PlayerInventory> OnDialogShow;
 
+    void Start() 
+    {
+        Time.timeScale = 1;
+        Guard.OnGuardHasSpottedPlayer += PlayerSpotted;
+    }
+
     void Update() {
         if (NumberOfParts == 5) {
             spaceShip.SetActive(true);
         } else {
             spaceShip.SetActive(false);
         }
+    }
+
+    void PlayerSpotted()
+    {
+        DialogShow("Youv'e been spotted! Press enter to play again");
+        Time.timeScale = 0;
     }
 
     public void PartCollected()
@@ -39,6 +51,6 @@ public class PlayerInventory : MonoBehaviour
 
     public void GoHome()
     {
-      DialogShow("Travel safe :)");
+        DialogShow("Travel safe :)");
     }
 }

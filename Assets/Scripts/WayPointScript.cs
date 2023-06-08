@@ -17,8 +17,8 @@ public class WayPointScript : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
-        animator.SetBool("IsSitting", false);
-        animator.SetBool("IsWalking", true);
+        // animator.SetBool("IsSitting", false);
+        // animator.SetBool("IsWalking", true);
     }
 
     void Update()
@@ -38,8 +38,7 @@ public class WayPointScript : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
-            Destroy(gameObject);
-            Destroy(collider.gameObject.transform.parent.gameObject);
+            Destroy(collider.gameObject);
             playerInventory.DialogShow("Youv'e been defeated");
         }
     }
@@ -49,7 +48,7 @@ public class WayPointScript : MonoBehaviour
         flag = false;
         animator.SetBool("IsWalking", false);
         animator.SetBool("IsSitting", true);
-        yield return new WaitForSeconds(UnityEngine.Random.Range(3,7));
+        yield return new WaitForSeconds(UnityEngine.Random.Range(1,3));
         animator.SetBool("IsSitting", false);
         animator.SetBool("IsWalking", true);
         GetComponent<Transform>().LookAt(waypoints[currentWayPoint]);
