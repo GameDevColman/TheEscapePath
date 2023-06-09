@@ -12,10 +12,9 @@ public class SpaceShip : MonoBehaviour
 
         if (collider.gameObject.tag == "Player" && playerInventory != null)
         {
-            playerInventory.GoHome();
-            AudioSource.PlayClipAtPoint(boomSound, transform.position);
-            Destroy(collider.gameObject);
             Destroy(gameObject);
+            AudioSource.PlayClipAtPoint(boomSound, transform.position);
+            playerInventory.GoHome();
         }
     }
 }

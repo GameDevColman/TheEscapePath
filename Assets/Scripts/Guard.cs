@@ -41,20 +41,26 @@ public class Guard : MonoBehaviour {
 	}
 
 	void Update() {
+		if (!animator.GetBool("IsSitting")) {
+			HandlePlayerVisibility();
+
+			if (playerVisibleTimer >= timeToSpotPlayer) {
+				if (OnGuardHasSpottedPlayer != null) {
+					OnGuardHasSpottedPlayer ();
+				}
+			}
+		}
+	}
+
+	void HandlePlayerVisibility() {
 		if (CanSeePlayer ()) {
 			playerVisibleTimer += Time.deltaTime;
 		} else {
 			playerVisibleTimer -= Time.deltaTime;
 		}
+
 		playerVisibleTimer = Mathf.Clamp (playerVisibleTimer, 0, timeToSpotPlayer);
 		spotlight.color = Color.Lerp (originalSpotlightColour, Color.red, playerVisibleTimer / timeToSpotPlayer);
-
-		if (playerVisibleTimer >= timeToSpotPlayer) {
-			if (OnGuardHasSpottedPlayer != null) {
-				Debug.Log("Spotted");
-				OnGuardHasSpottedPlayer ();
-			}
-		}
 	}
 
 	bool CanSeePlayer() {

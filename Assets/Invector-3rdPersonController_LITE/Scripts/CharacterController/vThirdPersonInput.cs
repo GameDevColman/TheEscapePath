@@ -29,6 +29,7 @@ namespace Invector.vCharacterController
         protected virtual void Start()
         {
             Guard.OnGuardHasSpottedPlayer += GameOver;
+            PlayerInventory.OnGameWon += GameOver;
             InitilizeController();
             InitializeTpCamera();
         }

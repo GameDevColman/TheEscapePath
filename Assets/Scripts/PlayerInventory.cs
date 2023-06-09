@@ -7,6 +7,8 @@ using TMPro;
 
 public class PlayerInventory : MonoBehaviour
 {
+    public static event System.Action OnGameWon;
+
     public int NumberOfParts {get; private set;}
     public string dialogText {get; private set;}
     public GameObject spaceShip;
@@ -23,8 +25,6 @@ public class PlayerInventory : MonoBehaviour
     void Update() {
         if (NumberOfParts == 5) {
             spaceShip.SetActive(true);
-        } else {
-            spaceShip.SetActive(false);
         }
     }
 
@@ -51,6 +51,10 @@ public class PlayerInventory : MonoBehaviour
 
     public void GoHome()
     {
-        DialogShow("Travel safe :)");
+        DialogShow("Travel safe :) Press enter to play again");
+        if (OnGameWon != null) {
+			OnGameWon ();
+		}
+        Time.timeScale = 0;
     }
 }
