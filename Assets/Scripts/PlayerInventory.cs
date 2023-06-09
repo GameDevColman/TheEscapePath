@@ -12,9 +12,12 @@ public class PlayerInventory : MonoBehaviour
     public int NumberOfParts {get; private set;}
     public string dialogText {get; private set;}
     public GameObject spaceShip;
+    public AudioClip spottedSound;
 
     public UnityEvent<PlayerInventory> OnPartCollected;
     public UnityEvent<PlayerInventory> OnDialogShow;
+
+    private bool isLost = false;
 
     void Start() 
     {
@@ -23,14 +26,16 @@ public class PlayerInventory : MonoBehaviour
     }
 
     void Update() {
-        if (NumberOfParts == 5) {
+        if (NumberOfParts == 5 && !isLost) {
             spaceShip.SetActive(true);
         }
     }
 
     void PlayerSpotted()
     {
+        isLost = true;
         DialogShow("Youv'e been spotted! Press enter to play again");
+        AudioSource.PlayClipAtPoint(spottedSound, transform.position);
         Time.timeScale = 0;
     }
 

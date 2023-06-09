@@ -12,7 +12,8 @@ public class SpaceShip : MonoBehaviour
 
         if (collider.gameObject.tag == "Player" && playerInventory != null)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            gameObject.GetComponent<Renderer>().enabled = false;
             AudioSource.PlayClipAtPoint(boomSound, transform.position);
             playerInventory.GoHome();
         }

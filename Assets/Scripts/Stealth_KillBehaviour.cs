@@ -24,30 +24,24 @@ public class Stealth_KillBehaviour : MonoBehaviour
            
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.F) && Enemy != null)
-        {
-          //! change the position and rotation of the player
-            // if (Vector3.Distance(transform.position, KillPosition.position) < 1f) {
-                this.transform.position = KillPosition.position;
-                this.transform.rotation = KillPosition.rotation;
-            // }
+        // if (Input.GetKeyDown(KeyCode.E) && Enemy != null)
+        // {
+        //     this.transform.position = KillPosition.position;
+        //     this.transform.rotation = KillPosition.rotation;
 
-            //! checking  if the position and rotation of the player is change it;
-            if(this.transform.position == KillPosition.position && this.transform.rotation == KillPosition.rotation)
-            {
-                //! playe animation Kill
-                foreach (AnimatorControllerParameter parameter in anim.parameters) {
-                    if (parameter.type == AnimatorControllerParameterType.Bool)
-                        anim.SetBool(parameter.name, false);
-                }
+        //     //! checking  if the position and rotation of the player is change it;
+        //     if(this.transform.position == KillPosition.position && this.transform.rotation == KillPosition.rotation)
+        //     {
+        //         //! playe animation Kill
 
-                anim.SetTrigger("Kill");
-                _Enemy.SetParent();
+        //         anim.SetTrigger("Kill");
+        //         Debug.Log("Should Animate");
+        //         _Enemy.SetParent();
 
-                //! start the coroutine 
-                StartCoroutine(EndKillStealth());
-            }
-        }
+        //         //! start the coroutine 
+        //         StartCoroutine(EndKillStealth());
+        //     }
+        // }
 	}
 
     

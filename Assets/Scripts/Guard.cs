@@ -91,12 +91,14 @@ public class Guard : MonoBehaviour {
 				targetWaypointIndex = (targetWaypointIndex + 1) % waypoints.Length;
 				targetWaypoint = waypoints [targetWaypointIndex];
     		animator.SetBool("IsWalking", false);
-				float randomWait = Mathf.Floor(Random.Range(0, waitTime));
-				if (randomWait > 0)
+				float randomWait = Random.Range(0, waitTime);
+				if (randomWait >= waitTime - 1)
 				{
 					animator.SetBool("IsSitting", true);
 					yield return new WaitForSeconds (randomWait);	
 					animator.SetBool("IsSitting", false);
+				} else {
+					yield return new WaitForSeconds (randomWait);	
 				}
 				yield return StartCoroutine (TurnToFace (targetWaypoint));
 				animator.SetBool("IsWalking", true);
@@ -109,7 +111,7 @@ public class Guard : MonoBehaviour {
 		Vector3 dirToLookTarget = (lookTarget - transform.position).normalized;
 		float targetAngle = 90 - Mathf.Atan2 (dirToLookTarget.z, dirToLookTarget.x) * Mathf.Rad2Deg;
 
-		while (Mathf.Abs(Mathf.DeltaAngle(transform.eulerAngles.y, targetAngle)) > 0.05f) {
+		while (Mathf.Abs(Mathf.DeltaAngle(transform.eulerAngles.y, targetAngle)) > 0.05f && !animator.GetBool("Kill")) {
 			float angle = Mathf.MoveTowardsAngle (transform.eulerAngles.y, targetAngle, turnSpeed * Time.deltaTime);
 			transform.eulerAngles = Vector3.up * angle;
 			yield return null;
