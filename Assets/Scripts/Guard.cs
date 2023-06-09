@@ -41,7 +41,7 @@ public class Guard : MonoBehaviour {
 	}
 
 	void Update() {
-		if (!animator.GetBool("IsSitting")) {
+		if (!animator.GetBool("IsSitting") && !animator.GetBool("Kill")) {
 			HandlePlayerVisibility();
 
 			if (playerVisibleTimer >= timeToSpotPlayer) {
@@ -83,7 +83,7 @@ public class Guard : MonoBehaviour {
 		Vector3 targetWaypoint = waypoints [targetWaypointIndex];
 		transform.LookAt (targetWaypoint);
 
-		while (true) {
+		while (!animator.GetBool("Kill")) {
 			transform.position = Vector3.MoveTowards (transform.position, targetWaypoint, speed * Time.deltaTime);
 			if (Mathf.Abs(Vector3.Distance(transform.position, targetWaypoint)) <= 0.3)
 				transform.position = targetWaypoint;
