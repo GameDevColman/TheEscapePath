@@ -186,7 +186,7 @@ MonoBehaviour:
   speed: 3
   waitTime: 3
   turnSpeed: 300
-  timeToSpotPlayer: 0.5
+  timeToSpotPlayer: 0.3
   spotlight: {fileID: 1173832004}
   viewDistance: 12
   viewMask:
@@ -660,7 +660,7 @@ MonoBehaviour:
   speed: 3
   waitTime: 3
   turnSpeed: 300
-  timeToSpotPlayer: 0.5
+  timeToSpotPlayer: 0.3
   spotlight: {fileID: 164997352}
   viewDistance: 12
   viewMask:
@@ -1034,7 +1034,7 @@ MonoBehaviour:
   speed: 3
   waitTime: 3
   turnSpeed: 300
-  timeToSpotPlayer: 0.5
+  timeToSpotPlayer: 0.3
   spotlight: {fileID: 1131434162}
   viewDistance: 12
   viewMask:
@@ -3163,7 +3163,7 @@ MonoBehaviour:
   speed: 3
   waitTime: 3
   turnSpeed: 300
-  timeToSpotPlayer: 0.5
+  timeToSpotPlayer: 0.3
   spotlight: {fileID: 2126546016}
   viewDistance: 12
   viewMask:
@@ -3696,42 +3696,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!4 &1939125483 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1401981221581295621, guid: f9f44c0b2eb6245c08740e584499bfaf, type: 3}
-  m_PrefabInstance: {fileID: 1512768584447370821}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1961667671
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1961667672}
-  m_Layer: 0
-  m_Name: KillPos
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1961667672
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1961667671}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1939125483}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2012041984
 GameObject:
   m_ObjectHideFlags: 0
@@ -4632,6 +4596,10 @@ PrefabInstance:
     - target: {fileID: 8823641745247743866, guid: f9f44c0b2eb6245c08740e584499bfaf, type: 3}
       propertyPath: waitTime
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8823641745247743866, guid: f9f44c0b2eb6245c08740e584499bfaf, type: 3}
+      propertyPath: timeToSpotPlayer
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9f44c0b2eb6245c08740e584499bfaf, type: 3}

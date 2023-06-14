@@ -41,7 +41,7 @@ public class Guard : MonoBehaviour {
 	}
 
 	void Update() {
-		if (!animator.GetBool("IsSitting") && !animator.GetBool("Kill")) {
+		if (!animator.GetBool("IsSitting")) {
 			HandlePlayerVisibility();
 
 			if (playerVisibleTimer >= timeToSpotPlayer) {

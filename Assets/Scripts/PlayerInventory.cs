@@ -37,6 +37,7 @@ public class PlayerInventory : MonoBehaviour
         DialogShow("Youv'e been spotted! Press enter to play again");
         AudioSource.PlayClipAtPoint(spottedSound, transform.position);
         Time.timeScale = 0;
+        Guard.OnGuardHasSpottedPlayer -= PlayerSpotted;
     }
 
     public void PartCollected()
@@ -56,7 +57,7 @@ public class PlayerInventory : MonoBehaviour
 
     public void GoHome()
     {
-        DialogShow("Travel safe :) Press enter to play again");
+        DialogShow("Travel safe! Press enter to play again");
         if (OnGameWon != null) {
 			OnGameWon ();
 		}
